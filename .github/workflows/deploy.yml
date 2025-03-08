@@ -29,8 +29,6 @@ jobs:
           check-latest: true
           registry-url: 'https://registry.npmjs.org'
           scope: '@your-scope'
-          cache: 'npm'
-          cache-dependency-path: 'package-lock.json'
       - name: Ensure package-lock.json
         run: |
           if [ ! -f package-lock.json ]; then
