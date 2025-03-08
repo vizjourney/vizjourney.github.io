@@ -29,6 +29,13 @@ jobs:
           check-latest: true
           registry-url: 'https://registry.npmjs.org'
           scope: '@your-scope'
+      - name: Cache Node.js dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       - name: Ensure package-lock.json
         run: |
           if [ ! -f package-lock.json ]; then
