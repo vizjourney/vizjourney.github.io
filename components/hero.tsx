@@ -16,7 +16,7 @@ export default function Hero() {
   const heroRef = useRef(null)
 
   useEffect(() => {
-    let timer
+    let timer: number; // Explicit type annotation
     const currentTitle = titles[currentTitleIndex]
 
     if (isDeleting) {
@@ -41,8 +41,8 @@ export default function Hero() {
       }, typingSpeed)
     }
 
-    return () => clearTimeout(timer)
-  }, [displayText, currentTitleIndex, isDeleting, titles])
+    return () => clearTimeout(timer);
+  }, [displayText, currentTitleIndex, isDeleting, titles]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -202,10 +202,4 @@ export default function Hero() {
           aria-label="Scroll to About section"
         >
           <span className="text-sm mb-2">Scroll Down</span>
-          <ChevronDown className="h-6 w-6 animate-bounce" />
-        </button>
-      </div>
-    </section>
-  )
-}
-
+          <ChevronDown
