@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import React, { useState, ChangeEvent } from 'react';
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -25,10 +25,10 @@ export default function Contact() {
     visible: { opacity: 1, y: 0 },
   }
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+}
 
   const handleSubmit = async (e) => {
     e.preventDefault()
