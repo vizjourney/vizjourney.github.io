@@ -1,6 +1,8 @@
-let userConfig = undefined
+let userConfig = null; // Initialize as null
+
 try {
-  userConfig = await import('./v0-user-next.config.js')
+  const importedUserConfig = await import('./v0-user-next.config.js');
+  userConfig = importedUserConfig.default; // Access the default export
 } catch (e) {
   // ignore error
 }
@@ -21,13 +23,13 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
-}
+};
 
-mergeConfig(nextConfig, userConfig)
+mergeConfig(nextConfig, userConfig);
 
 function mergeConfig(nextConfig, userConfig) {
   if (!userConfig) {
-    return
+    return;
   }
 
   for (const key in userConfig) {
@@ -38,11 +40,11 @@ function mergeConfig(nextConfig, userConfig) {
       nextConfig[key] = {
         ...nextConfig[key],
         ...userConfig[key],
-      }
+      };
     } else {
-      nextConfig[key] = userConfig[key]
+      nextConfig[key] = userConfig[key];
     }
   }
 }
 
-export default nextConfig
+export default nextConfig;
