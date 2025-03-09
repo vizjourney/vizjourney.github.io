@@ -34,7 +34,7 @@ export default function Hero() {
 
   useEffect(() => {
 
-    let timer
+    let timer: number
 
     const currentTitle = titles[currentTitleIndex]
 
