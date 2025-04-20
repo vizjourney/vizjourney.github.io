@@ -244,10 +244,15 @@ form{
 /* Responsive Design */
 @media (max-width: 768px) { 
     /* Navigation */
-    nav ul {
-        flex-direction: column; /* Stack nav items vertically */
-        align-items: center; /* Center items */
+    nav {
+        padding: 0.5rem 0; /* Adjust padding */
     }
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */   
+        align-items: stretch; /* Center items */
+       
+    }
+    
     nav ul li {
         margin: 0.8rem 0;
     }
@@ -275,5 +280,8 @@ form{
    /* Projects */
    .projects-grid {
        grid-template-columns: 1fr; /* Stack projects vertically */
+    }
+    nav ul li {
+        text-align: center; /* Center align text in nav items */
     }
 }
