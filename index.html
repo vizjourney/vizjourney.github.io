@@ -9,7 +9,8 @@
 <body>
 
     <header>
-        <nav>
+        <nav class="nav-container">
+            <div class="hamburger-menu">&#9776;</div>
             <ul>
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
@@ -17,6 +18,7 @@
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            
         </nav>
     </header>
 
@@ -85,6 +87,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script> document.querySelector('.hamburger-menu').addEventListener('click', function() { document.querySelector('nav ul').classList.toggle('show'); }); </script>
 
 </body>
 </html>

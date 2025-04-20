@@ -1,3 +1,26 @@
+// Hamburger menu functionality for mobile
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('nav ul');
+
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        if (navMenu.classList.contains('active')) {
+            navMenu.style.maxHeight = navMenu.scrollHeight + "px"; // Expand to content height
+            navMenu.style.opacity = "1";
+            navMenu.style.visibility = "visible";
+        } else {
+            navMenu.style.maxHeight = "0px";
+            navMenu.style.opacity = "0";
+            navMenu.style.visibility = "hidden";
+        }
+    });
+}
+
+
+
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
