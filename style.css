@@ -8,18 +8,18 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
     line-height: 1.6;
-    color: #2c3e50; /* Dark gray */
-    background-color: #f8f8f8; /* Light gray */
+    color: #ecf0f1; /* Light text for dark theme */
+    background-color: #2c3e50; /* Dark background */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
 }
 
 a {
-    text-decoration: none;
     color: #3498db; /* Blue */
+    text-decoration: none;
     transition: color 0.3s ease;
-}
+} 
 
 a:hover {
     color: #2980b9; /* Darker blue */
@@ -35,7 +35,7 @@ a:hover {
 /* Typography */
 h1, h2, h3 {
     font-weight: 600;
-    color: #2c3e50;
+    color: #ecf0f1; /* Light text for dark theme */
 }
 
 h1 {
@@ -56,8 +56,8 @@ p {
 
 /* Navigation */
 nav {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgba(44, 62, 80, 0.9); /* Dark background with transparency */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -77,7 +77,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #2c3e50;
+    color: #ecf0f1; /* Light text for dark theme */
     font-weight: 500;
     padding: 0.5rem 0;
     transition: color 0.3s ease;
@@ -92,19 +92,23 @@ section {
     text-align: center;
 }
 section:nth-child(even){
-    background-color: #f2f2f2;
+    background-color: #34495e;
+}
+section:not(:last-child) {
+    margin-bottom: 3rem; /* Adds space between sections except the last one */
 }
 
 /* Home */
 #home {
-    background-color: #333;
-    color: #fff;
+    background-color: #34495e;
+    color: #ecf0f1;
     padding: 10rem 2rem;
+    text-align: center;
 }
 
 #home h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 4rem; /* Larger for impact */
+    margin-bottom: 2rem;
 }
 
 #home p {
@@ -115,7 +119,7 @@ section:nth-child(even){
 
 /* About */
 #about {
-    background-color: #fff;
+    background-color: #2c3e50;
 }
 
 #about h2 {
@@ -130,11 +134,12 @@ section:nth-child(even){
 }
 
 /* Skills */
-#skills {
-    background-color: #f4f4f4;
+#skills{
+    background-color: #34495e;
+    padding-bottom: 6rem;
 }
 
-#skills h2{
+ #skills h2{
     margin-bottom: 2rem;
 }
 
@@ -146,17 +151,16 @@ section:nth-child(even){
     flex-wrap: wrap;
 }
 
-#skills ul li {
-    background-color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+#skills ul li {  
+    background-color: rgba(255, 255, 255, 0.1); /* White with transparency for the skills boxes */
+    color: #ecf0f1; /* Light text */
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Darker shadow */
+  }
 
 /* Projects */
-#projects {
-    background-color: #fff;
-}
+#projects {}
 
 .projects-grid {
     display: grid;
@@ -165,19 +169,19 @@ section:nth-child(even){
     margin-top: 2rem;
 }
 
-.project {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.project {   
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent project card background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Darker shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
 }
 
 .project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px); /* More pronounced lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Darker shadow on hover */
 }
-.project .project-content{
+.project .project-content {
     padding: 1.5rem;
 }
 img{
@@ -187,10 +191,10 @@ img{
     display: block;
 }
 /* Contact */
-#contact {
-    background-color: #333;
-    color: #fff;
-}
+#contact { 
+    color: #ecf0f1;
+    background-color: #34495e;
+ }
 
 #contact h2 {
     font-size: 2.5rem;
@@ -219,15 +223,15 @@ form{
 #contact form input,#contact form textarea {
     padding: 0.5rem;
     margin-bottom: 1rem;
-    border: 1px solid #555;
-    border-radius: 8px;
-    background-color: #444;
-    color: #fff;
+    border: 1px solid #555; /* Darker border */
+    border-radius: 6px;
+    background-color: #444; /* Darker background for inputs */
+    color: #ecf0f1; /* Light text */
 }
 
 #contact form button {
     background-color: #5cb85c;
-    color: #fff;
+    color: #ecf0f1;
     padding: 0.7rem 1.5rem;
     border: none;
     border-radius: 5px;
@@ -237,17 +241,18 @@ form{
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 0.5rem 0;
+   nav ul {
+       flex-direction: column;
     }
-    
+      nav ul li {
+        margin: 0.8rem 0;
+    }
     #home h1 {
-        font-size: 2.5rem;
+        font-size: 3rem; /* Adjust font size */
     }
-    
     #home p {
-        font-size: 1rem;
+        font-size: 1.1rem; /* Adjust font size */
+       
     }
     
     section {
