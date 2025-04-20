@@ -14,7 +14,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    transition: background-color 0.3s ease; /* General transition */
+    transition: background-color 0.3s ease, color 0.3s ease; /* General transition */
 }
 
 a {
@@ -71,32 +71,27 @@ nav {
 }
 
 
-.nav-container {
-    display: flex;
-    justify-content: space-between; /* Space out the logo and the menu */
-    align-items: center;
-    padding: 0 2rem;
-    max-width: 1200px; /* Example max width */
-    margin: 0 auto;
-    width:100%;
-}
-
 nav ul {
     list-style: none;
-    display: flex;
-   
-}
-
-nav ul li{
-    
-
-    list-style: none;
-    display: flex;
-    justify-content: center;
+    display: flex;    
 }
 
 .hamburger {
-    display: none; 
+    display: none;
+    cursor: pointer;
+    color: #ecf0f1;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    z-index: 101;
+    padding: 0.5rem;
+}
+
+.hamburger.active .line {
+    background-color: #fff; /* Change color on active if needed */
+}
+
 
 }
 .nav-links-mobile {
@@ -113,13 +108,12 @@ nav ul li{
 
 
 nav ul li {
-
     margin: 0 1rem;
     position: relative;
 }
 
 .nav-links {
-  display: flex;
+  display: flex; 
   justify-content: space-around;
   align-items: center;
 }
@@ -301,6 +295,24 @@ form{
     font-size: 1.1rem;
 }
 
+/* Day/Night Mode Toggle Button */
+.toggle-container {
+    position: absolute; /* Changed to absolute */
+    top: 1rem; /* Adjust as needed */
+    left: 1rem; /* Adjust as needed */
+    z-index: 101;
+  }
+  
+  .toggle-btn {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -309,18 +321,11 @@ form{
     .nav-container {
       padding: 0 1rem;
    }
-     .nav-links {
-         display: none; /* Hide the regular menu */
-    }
+    .nav-links {
+        display: none; /* Hide the regular menu */
+   }
     /* Styling for the hamburger icon */
-    .hamburger {
-        display: block; /* Show the hamburger */
-        cursor: pointer;
-        color: #ecf0f1;
-        font-size: 1.5rem;
-        position: absolute;
-        top: 1.2rem;
-        right: 1rem; /* Adjust as needed */
+     
         z-index: 101; /* Ensure it's above other content */
         padding: 0.5rem;
     }
@@ -329,13 +334,13 @@ form{
     .nav-links-mobile {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: start;
         position: absolute;
-        top: 0;
-        right: 0;
-        width: 0; /* Initially hidden */
+        top: 4rem; /* Position below the navigation */
+        left: 0; /* Full left */
+        width: 100%; /* Initially hidden */
         height: 100vh; /* Full viewport height */
-        background-color: rgba(44, 62, 80, 0.9);
+        background-color: rgba(44, 62, 80, 0.8);
         transition: width 0.3s ease-in-out; /* Animate the width */
         overflow: hidden; /* Hide menu items until expanded */
     }
@@ -351,6 +356,7 @@ form{
         width: 100%;
     }
   
+
     /* Adjust Navigation padding on smaller screens */
     nav {
         padding: 0;
@@ -385,5 +391,24 @@ form{
         transform: translateX(0); /* Show the menu */
         display: flex;
     }
+}
+
+/* Day/Night Mode */
+.day-mode {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.day-mode .toggle-btn {
+    background-color: #333;
+    color: #fff;
+}
+
+.day-mode a,
+.day-mode h1,
+.day-mode h2,
+.day-mode h3,
+.day-mode .hamburger{
+    color: #333;
 }
 

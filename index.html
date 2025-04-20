@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gourav Chandra - Portfolio</title>
+    <title>Gourav Chandra Portfolio</title>
+     <!-- Feather Icons CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <nav class="nav-container">
-            <div class="hamburger-menu">&#9776;</div>
+            <button class="theme-toggle" aria-label="Toggle theme"><i data-feather="moon"></i></button>
+            <div class="hamburger-menu"><i data-feather="menu"></i></div>
             <ul>
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
@@ -86,8 +89,11 @@
         <p>&copy; 2024 Gourav Chandra</p>
     </footer>
 
+   
+    <script> 
+        document.querySelector('.hamburger-menu').addEventListener('click', function() { document.querySelector('nav ul').classList.toggle('show'); });
+    </script>
     <script src="script.js"></script>
-    <script> document.querySelector('.hamburger-menu').addEventListener('click', function() { document.querySelector('nav ul').classList.toggle('show'); }); </script>
-
+    <script>feather.replace();</script>
 </body>
 </html>
