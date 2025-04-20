@@ -1,25 +1,22 @@
 // Hamburger Menu Functionality
 const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('nav ul');
+const navMenu = document.querySelector('.nav-menu');
 
 hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    
-    // Additional check for active class and adding/removing transition
-    if (navMenu.classList.contains('active')) {      
-        navMenu.style.transition = 'transform 0.3s ease-in-out';
-    } else {       
-        navMenu.style.transition = 'none';
+    hamburger.classList.toggle('is-active'); // Toggle a class for the hamburger
+    navMenu.classList.toggle('is-active'); // Toggle a class for the menu
+
+    if (navMenu.classList.contains('is-active')) {
+        navMenu.style.display = 'block'; // Ensure menu is displayed
+    } else {
+        navMenu.style.display = 'none'; // Ensure menu is hidden
     }
 });
-
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
             target.scrollIntoView({
                 behavior: 'smooth'
             });
@@ -35,7 +32,7 @@ document.querySelectorAll('.project').forEach(project => {
     });
     project.addEventListener('mouseout', function () {
         this.style.transform = 'scale(1)'; // Reset scale on mouse out
-        this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)'; // Reset shadow
+         this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)'; // Reset shadow
     });
 });
 
