@@ -1,23 +1,20 @@
-// Hamburger menu functionality for mobile
+// Hamburger Menu Functionality
 const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('nav ul'); // Ensure this correctly targets the nav menu
+const navMenu = document.querySelector('nav ul');
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
     
-    // Check if menu is active to show/hide
-    if (navMenu.classList.contains('active')) {
-        navMenu.style.display = 'block';
-        // Optionally add any additional effects or transitions here
-    } else {
-        navMenu.style.display = 'none';
-        // Optionally remove any effects or transitions here
+    // Additional check for active class and adding/removing transition
+    if (navMenu.classList.contains('active')) {      
+        navMenu.style.transition = 'transform 0.3s ease-in-out';
+    } else {       
+        navMenu.style.transition = 'none';
     }
 });
 
-
-// Smooth scrolling for navigation links
+// Smooth Scrolling for Navigation Links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -30,7 +27,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-// Add hover effect to project cards
+// Hover Effect for Project Cards
 document.querySelectorAll('.project').forEach(project => {
     project.addEventListener('mouseover', function () {
         this.style.transform = 'scale(1.02)'; // Slightly scale up on hover
@@ -42,7 +39,7 @@ document.querySelectorAll('.project').forEach(project => {
     });
 });
 
-// Simple tooltip functionality (example for skill items)
+// Tooltip Functionality for Skill Items
 document.querySelectorAll('#skills ul li').forEach(skill => {
     const tooltip = document.createElement('span');
     tooltip.textContent = skill.textContent;
@@ -65,4 +62,3 @@ document.querySelectorAll('#skills ul li').forEach(skill => {
     skill.addEventListener('mouseout', () => {
         tooltip.style.opacity = '0';
         });
-    });

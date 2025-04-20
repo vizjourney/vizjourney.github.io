@@ -91,6 +91,14 @@ nav ul li{
 .hamburger {
     display: none; 
 }
+.nav-links-mobile {
+    display: none;
+    position: absolute;
+    top: 60px; /* Below the navbar */
+    right: 0;
+    background-color: rgba(44, 62, 80, 0.9);
+    width: 50%;
+}
 
 
 nav ul li {
@@ -277,33 +285,29 @@ form{
      .nav-links {
          display: none; /* Hide the regular menu */
     }
-    
     .hamburger {
         display: block; /* Show the hamburger */
         cursor: pointer;
         color: #ecf0f1;
         font-size: 1.5rem;
-        z-index: 1001; 
+       
     }
-
-     nav ul {
+    .nav-links-mobile {
+        display: flex;
         flex-direction: column; /* Stack menu items vertically */
-        position: absolute;
-        top: 5rem;
-        right: 0;
-        width: 50%; /* Take full width of the screen */
-        background-color: rgba(44, 62, 80, 0.9); /* Match nav background */
-        transform: translateX(100%); /* Slide out the menu */
+        z-index: 1001;
         transition: transform 0.3s ease-in-out; /* Add slide transition */
-        
+        transform: translateX(100%); 
     }
-    nav ul li {
+    
+    .nav-links-mobile li {
         width: 100%;
     }
-    nav ul li a {
-       display: block;
+    .nav-links-mobile li a {
+        display: block;
         padding: 1rem;
         text-align: left;
+        width: 100%;
     }
    
     
@@ -338,10 +342,9 @@ form{
    .projects-grid {
        grid-template-columns: 1fr; /* Stack projects vertically */
     }
-    .nav-links.show {
+    .nav-links-mobile.show {
+        transform: translateX(0); /* Show the menu */
         display: flex;
-          transform: translateX(0); /* Show the menu */
-        
     }
 }
 
