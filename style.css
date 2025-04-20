@@ -74,6 +74,7 @@ nav {
 nav ul {
     list-style: none;
     display: flex;    
+    align-items: center;
 }
 
 .hamburger {
@@ -82,10 +83,12 @@ nav ul {
     color: #ecf0f1;
     font-size: 1.5rem;
     position: absolute;
-    top: 1.2rem;
-    right: 1rem;
-    z-index: 101;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 1000;
     padding: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .hamburger.active .line {
@@ -95,15 +98,16 @@ nav ul {
 
 }
 .nav-links-mobile {
-    display: none;
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    top: 0;
+    top: 4rem;
     right: 0; /* Start off screen to the right */
-    width: 0; /* Start with no width */
+    width: 0; /* initially hidden */
     background-color: rgba(44, 62, 80, 0.9);
     overflow: hidden; /* Hide overflow as the menu animates */
-    height: 100vh; /* Cover full viewport height */
-    transition: width 0.3s ease-in-out; /* Animate width for slide effect */
+    height: calc(100vh - 4rem);
+    transition: width 0.3s ease-in-out;
 }
 
 
@@ -132,6 +136,7 @@ nav ul li a:hover{
 
 /* Sections */
 section {
+    position: relative;
     padding: 4rem 2rem;
     transition: background-color 0.3s ease;
     text-align: center;
@@ -298,8 +303,8 @@ form{
 /* Day/Night Mode Toggle Button */
 .toggle-container {
     position: absolute; /* Changed to absolute */
-    top: 1rem; /* Adjust as needed */
-    left: 1rem; /* Adjust as needed */
+    top: 0.5rem; /* Adjust as needed */
+    left: 0.5rem; /* Adjust as needed */
     z-index: 101;
   }
   
@@ -317,29 +322,29 @@ form{
 /* Responsive Design */
 @media (max-width: 768px) {
      /* Hamburger menu icon */
-
+   .hamburger{
+        display: block;
+   }
     .nav-container {
       padding: 0 1rem;
    }
     .nav-links {
         display: none; /* Hide the regular menu */
    }
-    /* Styling for the hamburger icon */
-     
-        z-index: 101; /* Ensure it's above other content */
-        padding: 0.5rem;
-    }
+ 
     
     /* Mobile Navigation Links */
     .nav-links-mobile {
-        display: flex;
-        flex-direction: column;
         justify-content: start;
-        position: absolute;
-        top: 4rem; /* Position below the navigation */
-        left: 0; /* Full left */
+        position: fixed;
+        top: 4rem; 
+        left: 0; 
         width: 100%; /* Initially hidden */
-        height: 100vh; /* Full viewport height */
+        height: calc(100vh - 4rem); /* Full viewport height */
+       
+        display: none;
+        z-index: 99;
+        
         background-color: rgba(44, 62, 80, 0.8);
         transition: width 0.3s ease-in-out; /* Animate the width */
         overflow: hidden; /* Hide menu items until expanded */
@@ -406,7 +411,8 @@ form{
 
 .day-mode a,
 .day-mode h1,
-.day-mode h2,
+.day-mode .hamburger,
+.day-mode h2,   
 .day-mode h3,
 .day-mode .hamburger{
     color: #333;

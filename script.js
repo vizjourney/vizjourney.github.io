@@ -1,12 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Hamburger Menu Functionality
     const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
+    const navMenu = document.querySelector('nav ul');
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('is-active');
-        navMenu.classList.toggle('is-active');
-    });
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+      });
+
+      // Close menu if a link is clicked
+      navMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+              navMenu.classList.remove('active');
+          });
+      });
+
+      // Close the menu if click outside
+        document.addEventListener('click', (event) => {
+            if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+    } else {
+      console.error("Hamburger menu or navigation not found");
+    }
 
     // Smooth Scrolling for Navigation Links
     document.querySelectorAll('nav a').forEach(anchor => {
@@ -24,14 +41,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Day/Night Mode Toggle
     const themeToggle = document.querySelector('.theme-toggle');
     const body = document.body;
+    
+    if (themeToggle && body) {
+        // Set initial theme to day mode
+        body.classList.add('day-mode');
 
-    // Set initial theme to day mode
-    body.classList.add('day-mode');
-
-    themeToggle.addEventListener('click', () => {
-        body.classList.toggle('night-mode');
-        body.classList.toggle('day-mode');
-    });
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('night-mode');
+            body.classList.toggle('day-mode');
+            const currentMode = body.classList.contains('night-mode') ? 'night' : 'day';
+            localStorage.setItem('themeMode', currentMode);
+        });
+    } else {
+      console.error("theme or body not found");
+    }
 
     // Hover Effect for Project Cards
     document.querySelectorAll('.project').forEach(project => {
@@ -59,4 +82,5 @@ document.addEventListener('DOMContentLoaded', () => {
             tooltip.style.opacity = '0';
         });
     });
+    
 });
