@@ -1,24 +1,20 @@
 // Hamburger menu functionality for mobile
 const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('nav ul');
+const navMenu = document.querySelector('nav ul'); // Ensure this correctly targets the nav menu
 
-if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        if (navMenu.classList.contains('active')) {
-            navMenu.style.maxHeight = navMenu.scrollHeight + "px"; // Expand to content height
-            navMenu.style.opacity = "1";
-            navMenu.style.visibility = "visible";
-        } else {
-            navMenu.style.maxHeight = "0px";
-            navMenu.style.opacity = "0";
-            navMenu.style.visibility = "hidden";
-        }
-    });
-}
-
-
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    
+    // Check if menu is active to show/hide
+    if (navMenu.classList.contains('active')) {
+        navMenu.style.display = 'block';
+        // Optionally add any additional effects or transitions here
+    } else {
+        navMenu.style.display = 'none';
+        // Optionally remove any effects or transitions here
+    }
+});
 
 
 // Smooth scrolling for navigation links
