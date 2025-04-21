@@ -95,8 +95,6 @@ nav ul {
     background-color: #fff; /* Change color on active if needed */
 }
 
-
-}
 .nav-links-mobile {
     display: flex;
     flex-direction: column;
@@ -108,6 +106,7 @@ nav ul {
     overflow: hidden; /* Hide overflow as the menu animates */
     height: calc(100vh - 4rem);
     transition: width 0.3s ease-in-out;
+    
 }
 
 
@@ -336,14 +335,16 @@ form{
     /* Mobile Navigation Links */
     .nav-links-mobile {
         justify-content: start;
-        position: fixed;
-        top: 4rem; 
+        position: absolute;
+        top: 100%; 
         left: 0; 
-        width: 100%; /* Initially hidden */
+        width: 100%;
+        
         height: calc(100vh - 4rem); /* Full viewport height */
        
-        display: none;
+        display: block;
         z-index: 99;
+        padding: 0;
         
         background-color: rgba(44, 62, 80, 0.8);
         transition: width 0.3s ease-in-out; /* Animate the width */
@@ -351,8 +352,9 @@ form{
     }
 
     .nav-links-mobile.show {
-        width: 50%; /* Expand to cover half the screen */
-    }
+        width: 100%; /* Expand to cover full screen */
+        
+        }
 
     .nav-links-mobile li a {
         display: block;
@@ -360,7 +362,7 @@ form{
         text-align: center;
         width: 100%;
     }
-  
+   nav ul{flex-direction: column;}
 
     /* Adjust Navigation padding on smaller screens */
     nav {
@@ -392,10 +394,7 @@ form{
    .projects-grid {
        grid-template-columns: 1fr; /* Stack projects vertically */
     }
-    .nav-links-mobile.show {
-        transform: translateX(0); /* Show the menu */
-        display: flex;
-    }
+   
 }
 
 /* Day/Night Mode */
