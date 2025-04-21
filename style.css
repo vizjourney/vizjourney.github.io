@@ -9,23 +9,24 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
     line-height: 1.6;
-    color: #ecf0f1; /* Light text for dark theme */
-    background-color: #2c3e50; /* Dark background */
+    color: #334756; /* Dark text */
+    background-color: #e0f0ea; /* Light neutral background */
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale;   
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease; /* General transition */
+}   
+
+/* Links */
+a {
+  color: #3498db; /* Blue */
+  color: #0077cc; /* Modern blue */
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth color transition on hover */
 }
 
-a {
-    color: #3498db; /* Blue */
-
-    text-decoration: none;
-    transition: color 0.3s ease;
-} 
-
 a:hover {
-    color: #2980b9; /* Darker blue */
+    color: #00627a; /* Darker blue on hover */
 }
 
 /* Utility Classes */
@@ -38,11 +39,11 @@ a:hover {
 /* Typography */
 h1, h2, h3 {
     font-weight: 600;
-    color: #ecf0f1; /* Light text for dark theme */
+    color: #243b47; /* Dark headings */
 }
 
 h1 {
-    font-size: 3rem; /* Default size */
+    font-size: 3rem;
 }
 
 h2 {
@@ -55,16 +56,15 @@ h3 {
 
 
 p {
-    
-    font-size: 1.1rem;
+    font-size: 1.1rem;   
 }
 
 /* Navigation */
 nav {
-    background-color: rgba(44, 62, 80, 0.9); /* Dark background with transparency */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: rgba(224, 240, 234, 0.95); /* White with transparency */
+    box-shadow: 0 2px 5px rgba(36, 59, 71, 0.2); /* Light shadow */
     position: sticky;
-    top: 0;
+     top: 0;
     z-index: 100;
     padding: 1rem 0;
     width: 100%;
@@ -78,13 +78,13 @@ nav ul {
 }
 
 .hamburger {
-    display: none;
+    display: block; 
     cursor: pointer;
-    color: #ecf0f1;
+    color: #243b47; /* Dark color for the hamburger icon */
     font-size: 1.5rem;
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+      top: 0.5rem;
+      right: 0.5rem;
     z-index: 1000;
     padding: 0.5rem;
     border-radius: 5px;
@@ -92,6 +92,7 @@ nav ul {
 }
 
 .hamburger.active .line {
+
     background-color: #fff; /* Change color on active if needed */
 }
 
@@ -100,9 +101,9 @@ nav ul {
     flex-direction: column;
     position: absolute;
     top: 4rem;
-    right: 0; /* Start off screen to the right */
-    width: 0; /* initially hidden */
-    background-color: rgba(44, 62, 80, 0.9);
+     right: 0; /* Start off screen to the right */
+      width: 0; /* initially hidden */
+    background-color: rgba(36, 59, 71, 0.9);
     overflow: hidden; /* Hide overflow as the menu animates */
     height: calc(100vh - 4rem);
     transition: width 0.3s ease-in-out;
@@ -123,31 +124,30 @@ nav ul li {
 
 
 nav ul li a {
-    color: #ecf0f1; /* Light text for dark theme */
+    color: #243b47; /* Dark text for navigation links */
     font-weight: 500;
     padding: 0.5rem 0;
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover{
-    color: #3498db;
+nav ul li a:hover {
+    color: #0077cc; /* Blue on hover */
 }
 
 /* Sections */
 section {
     position: relative;
-    padding: 4rem 2rem;
+       padding: 4rem 2rem;
     transition: background-color 0.3s ease;
     text-align: center;
 }
-section:nth-child(even){
-    background-color: #34495e;
+section:nth-child(even) {
+    background-color: #c2d7d0; /* Light blue for even sections */
 }
 section:not(:last-child) {
-
-    margin-bottom: 3rem; /* Adds space between sections except the last one */
+    margin-bottom: 3rem;
 }
-
+/* home section */
 /* Home */
 #home {
     background-color: #34495e;
@@ -158,26 +158,27 @@ section:not(:last-child) {
 
 #home h1 {
     font-size: 4rem; /* Larger for impact */
-    margin-bottom: 2rem;
+   margin-bottom: 2rem;
 }
 
 #home p {
     
     font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
+     max-width: 600px;
+      margin: 0 auto;
 }
+
+
 
 
 /* About */
 #about {
-    background-color: #2c3e50;
+    background-color: #a0c2ba;
 }
 
 
 #about h2 {
-    
-   margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 #about p {
@@ -188,7 +189,7 @@ section:not(:last-child) {
 
 /* Skills */
 #skills {
-    background-color: #34495e;
+    background-color: #e0f0ea;
     padding-bottom: 6rem;
 }
 
@@ -203,14 +204,14 @@ section:not(:last-child) {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
 }
 
 #skills ul li {
-
-    background-color: rgba(255, 255, 255, 0.1); /* White with transparency for the skills boxes */
-    color: #ecf0f1; /* Light text */
-    padding: 0.7rem 1.2rem;
+    
+    background-color: #a0c2ba;
+    color: #243b47;
+    padding: 0.7rem 1.2rem; 
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Darker shadow */
   }
@@ -225,18 +226,17 @@ section:not(:last-child) {
     margin-top: 2rem;
 }
 
-.project {   
+.project {
     background-color: rgba(255, 255, 255, 0.1); /* Transparent project card background */
     border-radius: 10px; /* Rounded corners */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Darker shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(36, 59, 71, 0.2); /* Darker shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;    
 } 
 
 .project:hover {
     transform: translateY(-8px); /* More pronounced lift effect */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Darker shadow on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Darker shadow on hover */    
 }
 .project .project-content {
 
@@ -251,8 +251,8 @@ img{
 }
 /* Contact */
 #contact { 
-    color: #ecf0f1;
-    background-color: #34495e;
+    color: #334756;
+    background-color: #c2d7d0;
  }
 
 #contact h2 {
@@ -283,20 +283,21 @@ form{
 #contact form input,#contact form textarea {
     padding: 0.5rem;
     margin-bottom: 1rem;
-    border: 1px solid #555; /* Darker border */
+    border: 1px solid #a0c2ba; /* Light gray border */
     border-radius: 6px;
-    background-color: #444; /* Darker background for inputs */
-    color: #ecf0f1; /* Light text */
+    background-color: #fff; /* White background for inputs */
+    color: #334756; /* Dark text for inputs */
 }
 
-#contact form button {
-    background-color: #5cb85c;
-    color: #ecf0f1;
+#contact form button, .toggle-btn {
+    background-color: #0077cc; /* Blue button */
+    color: #fff; /* White text for buttons */
     padding: 0.7rem 1.5rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.1rem;
+
 }
 
 /* Day/Night Mode Toggle Button */
@@ -309,22 +310,19 @@ form{
   
   .toggle-btn {
     background-color: #fff;
-    color: #333;
-    border: none;
+     color: #333;
+     border: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
-
+.toggle-btn:hover{background-color: #00627a;}
 
 /* Responsive Design */
 @media (max-width: 768px) {
-     /* Hamburger menu icon */
-   .hamburger{
-        display: block;
-   }
-    .nav-container {
+   
+      .nav-container {
       padding: 0 1rem;
    }
     .nav-links {
@@ -332,38 +330,43 @@ form{
    }
  
     
-    /* Mobile Navigation Links */
+   /* Mobile Navigation Links */
     .nav-links-mobile {
         justify-content: start;
-        position: absolute;
-        top: 100%; 
-        left: 0; 
-        width: 100%;
+        position: fixed;
+        top: 4rem; /* Below the header */
+        left: 0;
+        width: 100%; /* Full width */
         
         height: calc(100vh - 4rem); /* Full viewport height */
        
-        display: block;
-        z-index: 99;
+        display: none; /* Hide by default */
+          z-index: 99;
         padding: 0;
         
-        background-color: rgba(44, 62, 80, 0.8);
+        background-color: rgba(36, 59, 71, 0.8);
         transition: width 0.3s ease-in-out; /* Animate the width */
         overflow: hidden; /* Hide menu items until expanded */
     }
+   
 
-    .nav-links-mobile.show {
-        width: 100%; /* Expand to cover full screen */
-        
-        }
+     .nav-links-mobile.show {
+            display: flex;
+            width: 100%; /* Expand to cover full screen */
+        }   
 
     .nav-links-mobile li a {
         display: block;
         padding: 1rem;
         text-align: center;
         width: 100%;
-    }
-   nav ul{flex-direction: column;}
+   }
 
+   nav ul{flex-direction: column;}
+     .nav-links {\n        display: none; /* Hide the regular menu */\n   }
+   .hamburger{
+        display: block;
+   }
     /* Adjust Navigation padding on smaller screens */
     nav {
         padding: 0;
@@ -397,23 +400,20 @@ form{
    
 }
 
-/* Day/Night Mode */
+/* light-dark-mode */
 .day-mode {
-    background-color: #f8f8f8;
-    color: #333;
+    background-color: #e0f0ea; /* Light neutral background */
+    color: #334756; /* Dark text */
 }
 
-.day-mode .toggle-btn {
-    background-color: #333;
-    color: #fff;
-}
-
+/* Light Text for light mode */
 .day-mode a,
+.day-mode li a,
 .day-mode h1,
-.day-mode .hamburger,
-.day-mode h2,   
+.day-mode h2,
 .day-mode h3,
-.day-mode .hamburger{
-    color: #333;
+.day-mode .hamburger,
+ {
+    color: #334756;
 }
 

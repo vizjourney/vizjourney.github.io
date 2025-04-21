@@ -1,5 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Hamburger Menu Functionality
+     // Function to handle hamburger visibility based on screen size
+    function handleHamburgerVisibility() {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navLinksMobile = document.querySelector('.nav-links-mobile')
+        if (window.innerWidth > 768 && hamburger) {
+            if (hamburger) {
+                hamburger.classList.add('hidden'); // Hide on larger screens
+            }
+            if (navLinks) {
+                navLinks.style.display = 'flex';
+            }
+             if (navLinksMobile) {
+                navLinksMobile.style.display = 'none';
+            }
+        } else {
+           hamburger.classList.remove('hidden'); // Show on smaller screens
+        }
+    }
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('nav ul');
 
@@ -23,6 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     } else {
       console.error("Hamburger menu or navigation not found");
+    }
+     // Check hamburger visibility on load and resize
+    handleHamburgerVisibility();
+    window.addEventListener('resize', () => {
+        handleHamburgerVisibility();
     }
 
     // Smooth Scrolling for Navigation Links
@@ -57,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Hover Effect for Project Cards
-    document.querySelectorAll('.project').forEach(project => {
+     document.querySelectorAll('.project').forEach(project => {
         project.addEventListener('mouseover', () => {
             project.style.transform = 'scale(1.02)';
             project.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
@@ -83,4 +107,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-});
