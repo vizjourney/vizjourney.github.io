@@ -1,36 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gourav Chandra Portfolio</title>
-     <!-- Feather Icons CDN -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gourav Chandra Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
- <header>
-        <nav class="nav-container">
-            <button class="theme-toggle" aria-label="Toggle theme"><i data-feather="moon"></i></button>
-            <div class="hamburger-menu"><i data-feather="menu"></i></div>
-            <ul>
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            
-        </nav>
-    </header>
-
-    <section id="home" class="home-section">
-        <div class="home-content">
-            <div class="intro-text">
-                <h1>Data Insights, Visualized.</h1>
-                <p>Welcome to my portfolio. I'm Gourav Chandra, and I specialize in transforming complex data into actionable insights.</p>
-            </div>
-        </div>  
+  <nav>
+    <div class="hamburger">&#9776;</div>
+    <ul class="nav-links-mobile">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <section id="home" class="home-section">
+    <div class="home-content">
+      <div class="intro-text">
+        <h1>Data Insights, Visualized.</h1>
+        <p>Welcome to my portfolio. I'm Gourav Chandra, and I specialize in transforming complex data into actionable insights.</p>
+      </div>
+    </div>
     </section>
 
     <section id="about">
@@ -44,20 +38,20 @@
     <section id="skills">
         <div class="content">
             <h2>Skills</h2>
-            <ul>
-                <li>Python</li>
-                <li>SQL</li>
-                <li>R</li>
-                <li>Pandas</li>
-                <li>NumPy</li>
-                <li>Scikit-learn</li>
-                <li>TensorFlow</li>
-                <li>Tableau</li>
-                <li>Power BI</li>
-                <li>AWS</li>
-                <li>Docker</li>
-                <li>...and more</li>
-            </ul>
+      <ul>
+        <li>Python</li>
+        <li>SQL</li>
+        <li>R</li>
+        <li>Pandas</li>
+        <li>NumPy</li>
+        <li>Scikit-learn</li>
+        <li>TensorFlow</li>
+        <li>Tableau</li>
+        <li>Power BI</li>
+        <li>AWS</li>
+        <li>Docker</li>
+        <li>...and more</li>
+      </ul>
         </div>
     </section>
 
@@ -85,12 +79,9 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Gourav Chandra</p>
+    <p>&copy; 2024 Gourav Chandra</p>
     </footer>
-
-   
-    <script> 
-        document.querySelector('.hamburger-menu').addEventListener('click', function() { document.querySelector('nav ul').classList.toggle('show'); });
-    <script src="script.js"></script>
+  
+  <script src="script.js"></script>
 </body>
 </html>
